@@ -20,6 +20,7 @@ public class TransmitterOperation {
         Nrf24L01Communicator communicator = new Nrf24L01Communicator();
         communicator.init(0, 500000);
         communicator.setupTXAddress(address);
+        communicator.setupRXAddress(address, 0);    //for auto acknowledgement operation
         communicator.setChipEnable(chipEnable);
         communicator.setChannel(55);
         communicator.setDataRate(Nrf24L01Communicator.DataRate.DR250K);
